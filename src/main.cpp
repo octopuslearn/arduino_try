@@ -9,6 +9,6 @@ void loop() {
   digitalWrite(13,LOW);// put your main code here, to run repeatedly:
   delay(1000);
   digitalWrite(13,HIGH);
-  delay(1000);
-  digitalWrite(1,LOW);//ceshi fuck
+  delay(1000);//afjao
+  digitalWrite(1,LOW);//ceshi fuck badkjfioajjfa
 }
