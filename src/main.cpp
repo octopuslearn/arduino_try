@@ -2,17 +2,11 @@
 
 int interruptD2=2;//设置D2为中断
 unsigned long ch[8],t[9];//1-8共8个通道，定时值从第一个通道初开始触发，共9个
-int pulse=0;
-void setup() {
-  attachInterrupt(digitalPinToInterrupt(interruptD2),interrupT0,RISING);//注册中断号interruptD2，要调用中断函数interrupt0，触发模式上升沿触发RISING
-}
+int pulse=0,cont=1;
 
-void loop() {
-
-
-}
 void interrupT0() {
-  t[pulse]=delayMicroseconds();
+  cont++;
+  t[pulse]=cont;
   switch(pulse)
   {
     case 1: ch[1]=t[1]-t[0];pulse++; 
@@ -65,4 +59,33 @@ void interrupT0() {
     } break;
     default: pulse++; break;//由于第一次时pulse本身作为起始点0，故而不属于8个通道，然后加一次进入下一个脉冲
   }
+}
+
+void setup() {
+  attachInterrupt(digitalPinToInterrupt(interruptD2),interrupT0,RISING);//注册中断号interruptD2，要调用中断函数interrupt0，触发模式上升沿触发RISING
+  Serial.begin(9600);
+}
+
+void loop() {
+
+
+}
+
+
+void print_information() {
+  Serial.print(ch[1]);
+  Serial.print("-");
+  Serial.print(ch[2]);
+  Serial.print("-");
+  Serial.print(ch[3]);
+  Serial.print("-");
+  Serial.print(ch[4]);
+  Serial.print("-");
+  Serial.print(ch[5]);
+  Serial.print("-");
+  Serial.print(ch[6]);
+  Serial.print("-");
+  Serial.print(ch[7]);
+  Serial.print("-");
+  Serial.print(ch[8]);
 }
