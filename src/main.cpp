@@ -85,16 +85,16 @@ void printCh(){//打印原先值
   Serial.print(ch2Raw);
   Serial.println(" -  ");
   delay(500);
-}
-void printAdjCh(){//打印使用map()重新规划范围后的值
-  Serial.print("ch1Adj = ");
-  Serial.print(ch1Adj);
-  Serial.print(" -  ");     //Imprime os valores já remapeados (somente DEBUG).//打印已经重新映射的值（仅限 DEBUG）
-  Serial.print("ch2Adj = ");
-  Serial.print(ch2Adj);
-  Serial.println(" -  ");
-  delay(500);
-}
+// }
+// void printAdjCh(){//打印使用map()重新规划范围后的值
+//   Serial.print("ch1Adj = ");
+//   Serial.print(ch1Adj);
+//   Serial.print(" -  ");     //Imprime os valores já remapeados (somente DEBUG).//打印已经重新映射的值（仅限 DEBUG）
+//   Serial.print("ch2Adj = ");
+//   Serial.print(ch2Adj);
+//   Serial.println(" -  ");
+//   delay(500);
+// }
 //// void recToPolar(){
 ////   r=sqrt(pow(ch1Adj,2)+pow(ch2Adj,2));//Executa a conversão das coordenadas retangulares(ch1Adj e ch2Adj)//执行直角坐标的转换（ch1Adj 和 ch2Adj）
 
